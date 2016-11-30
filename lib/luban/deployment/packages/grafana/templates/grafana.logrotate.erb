@@ -1,0 +1,16 @@
+# Grafana logrotate configuration
+
+<%= log_file_path %> {
+  daily
+  maxsize 5M
+  maxage <%= logrotate_max_age %>
+  rotate <%= logrotate_count %>
+  missingok
+  compress
+  compresscmd <%= `which gzip`.chomp %>
+  delaycompress
+  dateext
+  dateformat -%Y%m%d-%H%M%S
+  copytruncate
+  olddir archived_logs
+}
