@@ -1,8 +1,10 @@
 module Luban
   module Deployment
     module Packages
-      class Grafana < Luban::Deployment::Package::Base
-        class Installer < Luban::Deployment::Package::Installer
+      class Grafana
+        class Installer < Luban::Deployment::Service::Installer
+          include Paths
+          
           define_executable 'grafana-cli'
 
           def package_iter; task.opts.iter; end
@@ -29,9 +31,15 @@ module Luban
 
           protected
 
+          def init
+            super
+            linked_dirs.push('data')
+          end
+
           def build_package
             info "Building #{package_full_name}"
             within install_path do
+              rm('-r', '*') # Clean up install path
               execute(:mv, build_path.join('*'), '.', ">> #{install_log_file_path} 2>&1")
             end
           end
