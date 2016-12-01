@@ -9,7 +9,7 @@ module Luban
             end
 
             def process_pattern
-              @process_pattern ||= "#{control_file_path}$"
+              @process_pattern ||= "\-config #{control_file_path}$"
             end
 
             def shell_setup
