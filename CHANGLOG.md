@@ -1,11 +1,10 @@
 # Change log
 
-## Version 0.2.1 (Dec 01, 2016)
+## Version 0.2.2 (Dec 01, 2016)
 
 Minor enhancements:
   * Refined process matching regular expression in Controller
-  * Bump up gem dependency of luban to version 0.10.11
-    * To properly recreate symlinks after profile deployment
+  * Bump up gem dependency of luban to version 0.10.11 to properly recreate symlinks after profile deployment
 
 ## Version 0.2.0 (Nov 30, 2016)
 
