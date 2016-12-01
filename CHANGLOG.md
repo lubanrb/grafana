@@ -1,10 +1,13 @@
 # Change log
 
-## Version 0.2.2 (Dec 01, 2016)
+## Version 0.2.3 (Dec 01, 2016)
 
 Minor enhancements:
   * Refined process matching regular expression in Controller
   * Bump up gem dependency of luban to version 0.10.11 to properly recreate symlinks after profile deployment
+
+Bug fixes:
+  * Fixed missing tag in grafana.ini template
 
 ## Version 0.2.0 (Nov 30, 2016)
 
